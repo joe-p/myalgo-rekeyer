@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Webpack App</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
-    </body>
-    
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("service-worker.js")
-                    .then((registration) => {
-                        console.log("Service Worker registered: ", registration);
-                    })
-                    .catch((registrationError) => {
-                        console.error("Service Worker registration failed: ", registrationError);
-                    });
-            });
-        }
-    </script>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Webpack App</title>
+</head>
+
+<body>
+  <button id="connect">Connect Accounts</button>
+  <table id="accounts">
+    <tr>
+      <th>Account Name</th>
+      <th>Auth Account</th>
+      <th>Account Address</th>
+      <th>Rekey</th>
+      <th>Rekey To</th>
+    </tr>
+  </table>
+  <button id="rekey">Rekey</button>
+
+  <br />
+  <br />
+
+  <select name="sender" id="sender"></select>
+  <select name="receiver" id="receiver"></select>
+  <input type="number" id="amount" name="amount" min="0">
+  <button id="pay">Pay</button>
+</body>
+
+<style>
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  td {
+    font-family: 'Courier New', Courier, monospace;
+  }
+</style>
+
 </html>
